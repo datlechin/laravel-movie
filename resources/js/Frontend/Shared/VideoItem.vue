@@ -13,7 +13,7 @@ export default {
 <template>
   <div class="col-6 col-sm-4 col-lg-3 col-xl-2">
     <div class="card">
-      <Link href="details.html" class="card__cover">
+      <Link :href="`/watch/${movie.id}`" class="card__cover">
         <img :src="movie.poster_path" alt="" />
         <svg
           width="22"
@@ -54,7 +54,7 @@ export default {
         {{ movie.vote_average }}
       </span>
       <h3 class="card__title">
-        <Link href="details.html">{{ movie.title }}</Link>
+        <Link href="/watch/">{{ movie.title }}</Link>
       </h3>
       <ul class="card__list">
         <li>{{ movie.original_title }}</li>

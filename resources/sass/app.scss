@@ -1,5 +1,6 @@
 @import url('magnific-popup.css');
 @import url('bootstrap.sass');
+@import url('video.js/dist/video-js.css');
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Rubik:ital,wght@0,300;0,400;0,500;1,400&display=swap");
 
 html {
@@ -1179,6 +1180,9 @@ body::-webkit-scrollbar-thumb {
     left: 0;
     right: 0;
     height: 450px;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .section__bg:before {
@@ -6324,7 +6328,7 @@ body::-webkit-scrollbar-thumb {
 /*==============================
 	Plyr customization
 ==============================*/
-.plyr {
+.video-js {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     border-radius: 16px;
@@ -6345,13 +6349,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media (min-width: 768px) {
-    .plyr {
+    .videojs {
         margin-top: 40px;
     }
 }
 
 @media (min-width: 1200px) {
-    .plyr {
+    .videojs {
         margin-right: 30px;
     }
 
