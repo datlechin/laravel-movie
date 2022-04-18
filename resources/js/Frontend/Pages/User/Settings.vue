@@ -1,0 +1,27 @@
+<template>
+    <UserLayout>
+        <div class="tab-pane fade show active">
+            <div class="row">
+                <div class="col-12">
+                    <div class="sign__wrap">
+                        <div class="row">
+                            <div class="col-12 col-lg-6">
+                                <EditProfile/>
+                            </div>
+
+                            <div class="col-12 col-lg-6">
+                                <ChangePassword/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </UserLayout>
+</template>
+
+<script setup>
+import EditProfile from '../../Shared/EditProfile'
+import ChangePassword from '../../Shared/ChangePassword'
+import UserLayout from "../../Shared/UserLayout";
+</script>
