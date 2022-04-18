@@ -4,18 +4,34 @@ import { Link } from '@inertiajs/inertia-vue3'
 export default {
   components: { Link },
   props: {
-    links: Array,
+    links: Object,
   },
+  computed: {
+    currentPage() {
+      return this.getPageNumber(this.links.next) - 1
+    },
+    totalPages() {
+      return this.getPageNumber(this.links.last)
+    },
+    itemsPerPage() {
+      return 20
+    },
+  },
+  methods: {
+    getPageNumber(page) {
+      return page ? Number(page.substr(page.lastIndexOf('=') + 1)) : null
+    },
+  }
 }
 </script>
 
 
 <template>
   <div class="catalog__paginator-wrap">
-    <span class="catalog__pages">12 from 144</span>
+    <span class="catalog__pages">{{ itemsPerPage }} from {{ totalPages }}</span>
     <ul class="catalog__paginator">
       <li>
-        <Link href="#">
+        <Link :href="links.prev">
           <svg
             width="14"
             height="11"
@@ -38,12 +54,9 @@ export default {
           </svg>
         </Link>
       </li>
-      <li class="active"><Link href="#">1</Link></li>
-      <li><Link href="#">2</Link></li>
-      <li><Link href="#">3</Link></li>
-      <li><Link href="#">4</Link></li>
+      <li class="active"><Link :href="links.self">{{ currentPage }}</Link></li>
       <li>
-        <Link href="#">
+        <Link :href="links.next">
           <svg
             width="14"
             height="11"

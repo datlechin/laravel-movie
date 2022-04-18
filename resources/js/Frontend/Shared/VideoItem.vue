@@ -5,14 +5,7 @@ export default {
   components: { Link },
   props: {
     movie: Object,
-  },
-  methods: {
-    poster(movie) {
-      return movie.poster_path
-        ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
-        : 'https://via.placeholder.com/500x750'
-    },
-  },
+  }
 }
 </script>
 
@@ -21,7 +14,7 @@ export default {
   <div class="col-6 col-sm-4 col-lg-3 col-xl-2">
     <div class="card">
       <Link href="details.html" class="card__cover">
-        <img :src="poster(movie)" alt="" />
+        <img :src="movie.poster_path" alt="" />
         <svg
           width="22"
           height="22"
@@ -64,8 +57,7 @@ export default {
         <Link href="details.html">{{ movie.title }}</Link>
       </h3>
       <ul class="card__list">
-        <li>Comedy</li>
-        <li>{{ movie.release_date }}</li>
+        <li>{{ movie.original_title }}</li>
       </ul>
     </div>
   </div>
