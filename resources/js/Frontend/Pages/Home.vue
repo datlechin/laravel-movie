@@ -1,3 +1,43 @@
+<script>
+import Paginate from '../Shared/Paginate'
+import VideoItem from '../Shared/VideoItem'
+import { pickBy } from 'lodash'
+import { Head } from '@inertiajs/inertia-vue3'
+
+export default {
+  components: {
+    Paginate,
+    VideoItem,
+    Head,
+  },
+  props: {
+    movies: Array,
+    filters: Object,
+  },
+  data() {
+    return {
+      form: {
+        genres: this.filters.genres || '',
+        countries: this.filters.countries || '',
+        years: this.filters.years || '',
+        grade: this.filters.grade || 'newest',
+      },
+    }
+  },
+  watch: {
+    form: {
+      handler() {
+        this.$inertia.get('/', pickBy(this.form), {
+          preserveState: true,
+          preserveScroll: true,
+        })
+      },
+      deep: true,
+    },
+  },
+}
+</script>
+
 <template>
   <Head title="Trang chủ" />
   <div class="catalog">
@@ -113,40 +153,3 @@
     </div>
   </div>
 </template>
-
-<script>
-import Paginate from "../Shared/Paginate";
-import VideoItem from "../Shared/VideoItem";
-import { pickBy } from "lodash";
-import { Head } from "@inertiajs/inertia-vue3";
-
-export default {
-  components: {
-    Paginate,
-    VideoItem,
-    Head
-  },
-  props: {
-    movies: Array,
-    filters: Object,
-  },
-  data() {
-    return {
-      form: {
-        genres: this.filters.genres || "",
-        countries: this.filters.countries || "",
-        years: this.filters.years || "",
-        grade: this.filters.grade || "newest",
-      },
-    };
-  },
-  watch: {
-    form: {
-      handler() {
-        this.$inertia.get("/", pickBy(this.form), { preserveState: true });
-      },
-      deep: true,
-    },
-  },
-};
-</script>

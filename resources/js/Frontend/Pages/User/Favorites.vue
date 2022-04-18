@@ -1,3 +1,20 @@
+<script>
+import UserLayout from '../../Shared/UserLayout'
+import FavoriteItem from '../../Shared/FavoriteItem'
+import Paginate from '../../Shared/Paginate'
+import { Head } from '@inertiajs/inertia-vue3'
+
+export default {
+  components: {
+    UserLayout,
+    FavoriteItem,
+    Paginate,
+    Head,
+  },
+}
+</script>
+
+
 <template>
   <UserLayout>
     <Head title="Danh sách yêu thích" />
@@ -7,17 +24,9 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <Paginate :links="links" />
+          <Paginate :links="[]" />
         </div>
       </div>
     </div>
   </UserLayout>
 </template>
-<script setup>
-import UserLayout from "../../Shared/UserLayout";
-import FavoriteItem from "../../Shared/FavoriteItem";
-import Paginate from "../../Shared/Paginate";
-import { Head } from "@inertiajs/inertia-vue3";
-
-const links = [];
-</script>

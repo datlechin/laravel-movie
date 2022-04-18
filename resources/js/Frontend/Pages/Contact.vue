@@ -1,3 +1,51 @@
+<script>
+import Breadcrumb from '../Shared/Breadcrumb'
+import { useForm, Head } from '@inertiajs/inertia-vue3'
+import SocialItem from '../Shared/SocialItem'
+
+export default {
+  components: {
+    Breadcrumb,
+    SocialItem,
+    Head,
+  },
+  setup() {
+    const form = useForm({
+      name: null,
+      email: null,
+      subject: null,
+      message: null,
+    })
+
+    return { form }
+  },
+  data() {
+    return {
+      crums: [
+        {
+          name: 'Trang chủ',
+          url: '/',
+        },
+        {
+          name: 'Liên hệ',
+        },
+      ],
+    }
+  },
+  methods: {
+    submit() {
+      this.form.post('/contact', {
+        preserveScroll: true,
+        onSuccess: () => {
+          this.form.reset()
+          this.$toast.success(this.$page.props.flash.success)
+        },
+      })
+    },
+  },
+}
+</script>
+
 <template>
   <Head title="Liên hệ" />
   <Breadcrumb :crums="crums" />
@@ -92,39 +140,3 @@
     </div>
   </section>
 </template>
-
-<script setup>
-import Breadcrumb from "../Shared/Breadcrumb";
-import { useForm, usePage, Head } from "@inertiajs/inertia-vue3";
-import SocialItem from "../Shared/SocialItem";
-import { createToaster } from "@meforma/vue-toaster";
-
-const toaster = createToaster({});
-
-const crums = [
-  {
-    name: "Trang chủ",
-    url: "/",
-  },
-  {
-    name: "Liên hệ",
-  },
-];
-
-const form = useForm({
-  name: null,
-  email: null,
-  subject: null,
-  message: null,
-});
-
-const submit = () => {
-  form.post("/contact", {
-    preserveScroll: true,
-    onSuccess: () => {
-      form.reset();
-      toaster.success(usePage().props.value.flash.success);
-    },
-  });
-};
-</script>

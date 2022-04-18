@@ -19,6 +19,7 @@ mix.js('resources/js/Frontend/app.js', 'public/frontend/js')
     .options({
         processCssUrls: false,
     })
+    .disableSuccessNotifications()
 
 if (mix.inProduction()) {
     mix.version();

@@ -1,10 +1,10 @@
 <script>
-import Scrollbar from 'smooth-scrollbar';
+import Scrollbar from 'smooth-scrollbar'
 
 export default {
-    mounted() {
-        Scrollbar.init(this.$el.querySelector('.dashbox__table-wrap'));
-    }
+  mounted() {
+    Scrollbar.init(this.$el.querySelector('.dashbox__table-wrap'))
+  },
 }
 </script>
 
