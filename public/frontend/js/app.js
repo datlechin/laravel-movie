@@ -28692,8 +28692,8 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/frontend/js/app": 0,
-/******/ 			"backend/css/admin": 0,
-/******/ 			"frontend/css/app": 0
+/******/ 			"frontend/css/app": 0,
+/******/ 			"backend/css/admin": 0
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.j = (chunkId, promises) => {
@@ -28780,9 +28780,9 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["backend/css/admin","frontend/css/app"], () => (__webpack_require__("./resources/js/Frontend/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["backend/css/admin","frontend/css/app"], () => (__webpack_require__("./resources/sass/app.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["backend/css/admin","frontend/css/app"], () => (__webpack_require__("./resources/sass/admin.scss")))
+/******/ 	__webpack_require__.O(undefined, ["frontend/css/app","backend/css/admin"], () => (__webpack_require__("./resources/js/Frontend/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["frontend/css/app","backend/css/admin"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["frontend/css/app","backend/css/admin"], () => (__webpack_require__("./resources/sass/admin.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

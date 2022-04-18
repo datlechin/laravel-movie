@@ -38,6 +38,9 @@
 
 <script setup>
 import {useForm, usePage} from "@inertiajs/inertia-vue3";
+import { createToaster } from "@meforma/vue-toaster";
+
+const toaster = createToaster({});
 
 const user = usePage().props.value.auth.user
 
@@ -49,7 +52,8 @@ const form = useForm({
 
 const submit = () => {
     form.put('/user/profile', {
-        onSuccess: () => toastr.success(usePage().props.value.flash.success)
+        preserveScroll: true,
+        onSuccess: () => toaster.success(usePage().props.value.flash.success)
     })
 }
 </script>
