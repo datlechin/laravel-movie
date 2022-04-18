@@ -20,7 +20,6 @@
                     <a class="dashbox__more" href="#">View All</a>
                 </div>
             </div>
-
             <div class="dashbox__table-wrap dashbox__table-wrap--2">
                 <table class="main__table main__table--dash">
                     <thead>

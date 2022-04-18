@@ -1,5 +1,6 @@
 <template>
     <UserLayout>
+        <Head title="Thông tin cá nhân" />
         <div class="tab-pane fade show active">
             <div class="row row--grid">
                 <div class="col-12 col-sm-6 col-xl-3">
@@ -52,6 +53,7 @@
 import ReviewsList from "../../Shared/ReviewsList";
 import MoviesRecommeded from "../../Shared/MoviesRecommeded";
 import UserLayout from "../../Shared/UserLayout";
+import { Head } from '@inertiajs/inertia-vue3';
 
 const crums = [
     {

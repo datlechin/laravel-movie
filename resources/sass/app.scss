@@ -1,62 +1,7 @@
-@import url('owl.carousel.css');
-@import url('slider-radio.css');
 @import url('magnific-popup.css');
-@import url('bootstrap.css');
-
-/*----------------------------------------
-[Master Stylesheet]
-
-Project:	FlixTV HTML Template
-Version:	1.0
-Primary use:	FlixTV HTML Template
-----------------------------------------*/
-/*----------------------------------------
-[Table of contents]
-
-1. Fonts
-2. Common styles
-3. Header
-4. Section
-5. Catalog
-6. Profile
-7. Breadcrumb
-8. Card
-9. Live
-10. Interview
-11. Series
-12. Category
-13. Plans
-14. Plan
-15. Step
-16. Stats
-17. Feature
-18. Dashbox
-19. Article
-20. Categories
-21. Share
-22. Subscribe
-23. Comments
-24. Requirements
-25. Sidebar
-26. Contacts
-27. Footer
-28. Partners
-29. Sign
-30. Page 404
-31. Slider radio
-32. Modal
-33. Select2
-34. Scrollbar-track
-35. Plyr
-----------------------------------------*/
-/*==============================
-	Fonts
-==============================*/
+@import url('bootstrap.sass');
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Rubik:ital,wght@0,300;0,400;0,500;1,400&display=swap");
 
-/*==============================
-	Common styles
-==============================*/
 html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -1908,6 +1853,7 @@ body::-webkit-scrollbar-thumb {
     align-items: center;
     overflow: hidden;
     width: 100%;
+    margin-bottom: 15px;
 }
 
 .profile__tabs li {
@@ -1927,6 +1873,7 @@ body::-webkit-scrollbar-thumb {
     color: #fff;
     position: relative;
     font-size: 14px;
+    text-align: center;
 }
 
 .profile__tabs a:hover {
@@ -2029,6 +1976,12 @@ body::-webkit-scrollbar-thumb {
 
 .profile__avatar img {
     width: 100%;
+}
+
+@media (max-width: 340px) {
+    .profile__logout span {
+        display: none;
+    }
 }
 
 @media (min-width: 768px) {
@@ -6035,7 +5988,7 @@ body::-webkit-scrollbar-thumb {
 .slider-radio {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
     background-color: #131720;
     padding: 5px 0;

@@ -9,14 +9,11 @@
 </head>
 <body>
 @inertia
-<script src="{{ asset('frontend/js/manifest.js') }}"></script>
-<script src="{{ asset('frontend/js/vendor.js') }}"></script>
 <script src="{{ mix('frontend/js/app.js') }}" defer></script>
 <script src="{{ asset('frontend/js/jquery-3.5.1.min.js') }}"></script>
 <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('frontend/js/jquery.magnific-popup.min.js') }}"></script>
-<script src="{{ asset('frontend/js/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('frontend/js/slider-radio.js') }}"></script>
+<script src="{{ asset('frontend/js/smooth-scrollbar.js') }}"></script>
 <script src="{{ asset('frontend/js/main.js') }}"></script>
 </body>
 </html>

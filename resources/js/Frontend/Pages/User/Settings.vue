@@ -1,5 +1,6 @@
 <template>
     <UserLayout>
+        <Head title="Cài đặt" />
         <div class="tab-pane fade show active">
             <div class="row">
                 <div class="col-12">
@@ -24,4 +25,5 @@
 import EditProfile from '../../Shared/EditProfile'
 import ChangePassword from '../../Shared/ChangePassword'
 import UserLayout from "../../Shared/UserLayout";
+import { Head } from '@inertiajs/inertia-vue3';
 </script>

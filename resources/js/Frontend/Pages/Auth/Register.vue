@@ -1,4 +1,5 @@
 <template>
+    <Head title="Đăng ký" />
     <div class="sign section--full-bg">
         <div class="container">
             <div class="row">
@@ -6,7 +7,7 @@
                     <div class="sign__content">
                         <form class="sign__form" @submit.prevent="form.post('/register')">
                             <Link href="/" class="sign__logo">
-                                <img src="img/logo.svg" alt="">
+                                <img src="/frontend/img/logo.svg" alt="">
                             </Link>
                             <div class="sign__group">
                                 <input type="text" v-model="form.name" class="sign__input" placeholder="Họ tên">
@@ -59,7 +60,7 @@
 </template>
 
 <script setup>
-import {Link, useForm} from "@inertiajs/inertia-vue3";
+import {Link, useForm, Head} from "@inertiajs/inertia-vue3";
 import {defineProps} from "vue";
 
 const props = defineProps({

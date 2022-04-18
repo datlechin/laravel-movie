@@ -1,288 +1,4 @@
 @import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Rubik:ital,wght@0,300;0,400;0,500;1,400&display=swap);
-.owl-carousel,
-.owl-carousel .owl-item {
-    -webkit-tap-highlight-color: transparent;
-    position: relative;
-}
-.owl-carousel {
-    display: none;
-    width: 100%;
-    z-index: 1;
-}
-.owl-carousel .owl-stage {
-    position: relative;
-    touch-action: manipulation;
-    -moz-backface-visibility: hidden;
-}
-.owl-carousel .owl-stage:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0;
-}
-.owl-carousel .owl-stage-outer {
-    position: relative;
-    overflow: hidden;
-    -webkit-transform: translate3d(0, 0, 0);
-}
-.owl-carousel .owl-item,
-.owl-carousel .owl-wrapper {
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-}
-.owl-carousel .owl-item {
-    min-height: 1px;
-    float: left;
-    -webkit-backface-visibility: hidden;
-    -webkit-touch-callout: none;
-}
-.owl-carousel .owl-item img {
-    display: block;
-    width: 100%;
-}
-.owl-carousel .owl-dots.disabled,
-.owl-carousel .owl-nav.disabled {
-    display: none;
-}
-.no-js .owl-carousel,
-.owl-carousel.owl-loaded {
-    display: block;
-}
-.owl-carousel .owl-dot,
-.owl-carousel .owl-nav .owl-next,
-.owl-carousel .owl-nav .owl-prev {
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-.owl-carousel .owl-nav button.owl-next,
-.owl-carousel .owl-nav button.owl-prev,
-.owl-carousel button.owl-dot {
-    background: 0 0;
-    color: inherit;
-    border: none;
-    padding: 0 !important;
-    font: inherit;
-}
-.owl-carousel.owl-loading {
-    opacity: 0;
-    display: block;
-}
-.owl-carousel.owl-hidden {
-    opacity: 0;
-}
-.owl-carousel.owl-refresh .owl-item {
-    visibility: hidden;
-}
-.owl-carousel.owl-drag .owl-item {
-    touch-action: pan-y;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-.owl-carousel.owl-grab {
-    cursor: move;
-    cursor: -webkit-grab;
-    cursor: grab;
-}
-.owl-carousel.owl-rtl {
-    direction: rtl;
-}
-.owl-carousel.owl-rtl .owl-item {
-    float: right;
-}
-.owl-carousel .animated {
-    -webkit-animation-duration: 1s;
-            animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
-}
-.owl-carousel .owl-animated-in {
-    z-index: 0;
-}
-.owl-carousel .owl-animated-out {
-    z-index: 1;
-}
-.owl-carousel .fadeOut {
-    -webkit-animation-name: fadeOut;
-            animation-name: fadeOut;
-}
-@-webkit-keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-.owl-height {
-    transition: height 0.5s ease-in-out;
-}
-.owl-carousel .owl-item .owl-lazy {
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-.owl-carousel .owl-item .owl-lazy:not([src]),
-.owl-carousel .owl-item .owl-lazy[src^=""] {
-    max-height: 0;
-}
-.owl-carousel .owl-item img.owl-lazy {
-    transform-style: preserve-3d;
-}
-.owl-carousel .owl-video-wrapper {
-    position: relative;
-    height: 100%;
-    background: #000;
-}
-.owl-carousel .owl-video-play-icon {
-    position: absolute;
-    height: 80px;
-    width: 80px;
-    left: 50%;
-    top: 50%;
-    margin-left: -40px;
-    margin-top: -40px;
-    background: url(owl.video.play.png) no-repeat;
-    cursor: pointer;
-    z-index: 1;
-    -webkit-backface-visibility: hidden;
-    transition: transform 0.1s ease;
-}
-.owl-carousel .owl-video-play-icon:hover {
-    transform: scale(1.3, 1.3);
-}
-.owl-carousel .owl-video-playing .owl-video-play-icon,
-.owl-carousel .owl-video-playing .owl-video-tn {
-    display: none;
-}
-.owl-carousel .owl-video-tn {
-    opacity: 0;
-    height: 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    transition: opacity 0.4s ease;
-}
-.owl-carousel .owl-video-frame {
-    position: relative;
-    z-index: 1;
-    height: 100%;
-    width: 100%;
-}
-
-/* REQUIRED STYLES */
-.slider-radio {
-    position: relative;
-}
-.slider-radio input[type="radio"] {
-    display: none;
-}
-.slider-radio input[type="radio"]:checked + label {
-    position: relative !important;
-    z-index: 100 !important;
-}
-
-/* DEFAULT */
-.slider-radio {
-    display: inline-block;
-}
-
-.slider-radio label {
-    display: inline-block;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-/* Indicator Styles */
-.slider-radio input[type="radio"]:checked + label,
-.slider-radio .sliding-piece {
-    background-color: #77abff;
-    transition-timing-function: cubic-bezier(0.74, 0.14, 0.38, 0.99);
-}
-
-/* Base Theme */
-.slider-radio.base {
-    background-color: #eee;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.slider-radio.base input[type="radio"]:checked + label,
-.slider-radio.base .sliding-piece {
-    background-color: #005d7a;
-    border: none;
-    color: white;
-}
-
-/* Elegant Theme */
-
-.slider-radio.elegant label {
-    display: inline-block;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;
-    opacity: 0.5;
-}
-
-.slider-radio.elegant input[type="radio"]:checked + label,
-.slider-radio.elegant .sliding-piece {
-    color: white;
-    border-radius: 10px;
-    background-color: #f44242;
-    opacity: 1;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
-
-/* Edgy Theme */
-
-.slider-radio.edgy label {
-    display: inline-block;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;
-    opacity: 0.5;
-    filter: blur(1px);
-    transition: filter 0.3s;
-}
-
-.slider-radio.edgy input[type="radio"]:checked + label {
-    filter: blur(0px);
-}
-.slider-radio.edgy input[type="radio"]:checked + label,
-.slider-radio.edgy .sliding-piece {
-    border-radius: 10px;
-    background-color: transparent;
-    color: black;
-    opacity: 1;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
-
-/* Vertical */
-
-.slider-radio.vertical label {
-    display: block !important;
-}
-
 /* Magnific Popup CSS */
 .mfp-bg {
     top: 0;
@@ -4347,58 +4063,7 @@ html {
         margin-left: auto !important;
     }
 }
-/*----------------------------------------
-[Master Stylesheet]
 
-Project:	FlixTV HTML Template
-Version:	1.0
-Primary use:	FlixTV HTML Template
-----------------------------------------*/
-/*----------------------------------------
-[Table of contents]
-
-1. Fonts
-2. Common styles
-3. Header
-4. Section
-5. Catalog
-6. Profile
-7. Breadcrumb
-8. Card
-9. Live
-10. Interview
-11. Series
-12. Category
-13. Plans
-14. Plan
-15. Step
-16. Stats
-17. Feature
-18. Dashbox
-19. Article
-20. Categories
-21. Share
-22. Subscribe
-23. Comments
-24. Requirements
-25. Sidebar
-26. Contacts
-27. Footer
-28. Partners
-29. Sign
-30. Page 404
-31. Slider radio
-32. Modal
-33. Select2
-34. Scrollbar-track
-35. Plyr
-----------------------------------------*/
-/*==============================
-	Fonts
-==============================*/
-/*==============================
-	Common styles
-==============================*/
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -6229,6 +5894,7 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
   overflow: hidden;
   width: 100%;
+  margin-bottom: 15px;
 }
 
 .profile__tabs li {
@@ -6248,6 +5914,7 @@ body::-webkit-scrollbar-thumb {
   color: #fff;
   position: relative;
   font-size: 14px;
+  text-align: center;
 }
 
 .profile__tabs a:hover {
@@ -6352,6 +6019,11 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
 }
 
+@media (max-width: 340px) {
+  .profile__logout span {
+    display: none;
+  }
+}
 @media (min-width: 768px) {
   .profile {
     padding: 0 30px;
@@ -10307,7 +9979,7 @@ body::-webkit-scrollbar-thumb {
 .slider-radio {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   background-color: #131720;
   padding: 5px 0;
