@@ -32,6 +32,9 @@
 <script setup>
 import {Link, useForm, usePage, Head} from "@inertiajs/inertia-vue3";
 import {computed} from "vue";
+import { createToaster } from "@meforma/vue-toaster";
+
+const toaster = createToaster({});
 
 const form = useForm({
     email: null,
@@ -41,7 +44,7 @@ const submit = () => {
     form.post('/forgot-password', {
         onSuccess: () => {
             form.reset()
-            toastr.success(usePage().props.value.flash.success)
+            toaster.success(usePage().props.value.flash.success)
         }
     });
 }

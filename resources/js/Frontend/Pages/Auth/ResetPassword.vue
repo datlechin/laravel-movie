@@ -32,6 +32,9 @@
 
 <script setup>
 import {Head, Link, useForm, usePage} from "@inertiajs/inertia-vue3";
+import { createToaster } from "@meforma/vue-toaster";
+
+const toaster = createToaster({});
 
 const props = defineProps({
     token: String,
@@ -49,7 +52,7 @@ const submit = () => {
     form.post('/password/reset', {
         onSuccess: () => {
             form.reset('password', 'password_confirmation')
-            toastr.success(usePage().props.value.flash.success)
+            toaster.success(usePage().props.value.flash.success)
         }
     });
 }

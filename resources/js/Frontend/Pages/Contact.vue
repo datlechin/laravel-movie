@@ -62,6 +62,9 @@
 import Breadcrumb from '../Shared/Breadcrumb'
 import {useForm, usePage} from "@inertiajs/inertia-vue3";
 import SocialItem from "../Shared/SocialItem";
+import { createToaster } from "@meforma/vue-toaster";
+
+const toaster = createToaster({});
 
 const crums = [
     {
@@ -82,9 +85,10 @@ const form = useForm({
 
 const submit = () => {
     form.post('/contact', {
+        preserveScroll: true,
         onSuccess: () => {
             form.reset()
-            toastr.success((usePage().props.value.flash.success))
+            toaster.success((usePage().props.value.flash.success))
         }
     })
 }

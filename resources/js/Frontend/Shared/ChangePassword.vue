@@ -36,6 +36,9 @@
 
 <script setup>
 import {useForm, usePage} from "@inertiajs/inertia-vue3";
+import { createToaster } from "@meforma/vue-toaster";
+
+const toaster = createToaster({});
 
 const form = useForm({
     current_password: null,
@@ -45,9 +48,10 @@ const form = useForm({
 
 const submit = () => {
     form.put('/user/change-password', {
+        preserveScroll: true,
         onSuccess: () => {
             form.reset()
-            toastr.success(usePage().props.value.flash.success)
+            toaster.success(usePage().props.value.flash.success)
         }
     })
 }
