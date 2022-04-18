@@ -54,6 +54,7 @@ import ReviewsList from "../../Shared/ReviewsList";
 import MoviesRecommeded from "../../Shared/MoviesRecommeded";
 import UserLayout from "../../Shared/UserLayout";
 import { Head } from '@inertiajs/inertia-vue3';
+import { onMounted } from "@vue/runtime-core";
 
 const crums = [
     {

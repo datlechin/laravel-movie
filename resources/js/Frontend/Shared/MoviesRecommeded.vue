@@ -1,3 +1,13 @@
+<script>
+import Scrollbar from 'smooth-scrollbar';
+
+export default {
+    mounted() {
+        Scrollbar.init(this.$el.querySelector('.dashbox__table-wrap'));
+    }
+}
+</script>
+
 <template>
   <div class="col-12 col-xl-6">
     <div class="dashbox">
@@ -23,7 +33,7 @@
         </div>
       </div>
 
-      <div class="dashbox__table-wrap dashbox__table-wrap--1">
+      <div class="dashbox__table-wrap">
         <table class="main__table main__table--dash">
           <thead>
             <tr>
