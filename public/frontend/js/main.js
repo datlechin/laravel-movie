@@ -167,33 +167,4 @@ $(document).ready(function () {
         $outer.remove();
         return 100 - widthWithScroll;
     }
-    
-    var Scrollbar = window.Scrollbar;
-
-    if ($(".header__nav-menu--scroll").length) {
-        Scrollbar.init(document.querySelector(".header__nav-menu--scroll"), {
-            damping: 0.1,
-            renderByPixels: true,
-            alwaysShowTracks: true,
-            continuousScrolling: true,
-        });
-    }
-
-    if ($(".dashbox__table-wrap--1").length) {
-        Scrollbar.init(document.querySelector(".dashbox__table-wrap--1"), {
-            damping: 0.1,
-            renderByPixels: true,
-            alwaysShowTracks: true,
-            continuousScrolling: true,
-        });
-    }
-
-    if ($(".dashbox__table-wrap--2").length) {
-        Scrollbar.init(document.querySelector(".dashbox__table-wrap--2"), {
-            damping: 0.1,
-            renderByPixels: true,
-            alwaysShowTracks: true,
-            continuousScrolling: true,
-        });
-    }
 });
