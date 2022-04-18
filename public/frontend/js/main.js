@@ -50,29 +50,6 @@ $(document).ready(function () {
         };
     }
 
-    $('.header__menu').on('click', function () {
-        $('.header__menu').toggleClass('header__menu--active');
-        $('.header').toggleClass('header--menu');
-        $('.header__nav').toggleClass('header__nav--active');
-
-        if ($('.header__nav').hasClass('header__nav--active')) {
-            disableScrolling();
-        } else {
-            enableScrolling();
-        }
-    });
-
-    // check click link not have href in .header__nav
-    $('.header__nav').on('click', 'a', function (e) {
-        if (!$(this).attr('href') == '') {
-            e.preventDefault();
-            $('.header__menu').removeClass('header__menu--active');
-            $('.header').removeClass('header--menu');
-            $('.header__nav').removeClass('header__nav--active');
-            enableScrolling();
-        }
-    });
-
     $('.header__search, .header__form-close').on('click', function () {
         $('.header__form').toggleClass('header__form--active');
     });

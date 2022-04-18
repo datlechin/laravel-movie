@@ -1,10 +1,10 @@
 <template>
-    <header class="header header--static">
+    <header class="header header--static" :class="{ 'header--menu': toggleMenu }">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="header__content">
-                        <button class="header__menu" type="button">
+                        <button class="header__menu" :class="{ 'header__menu--active': toggleMenu }" type="button" @click="toggleMenu = !toggleMenu">
                             <span></span>
                             <span></span>
                             <span></span>
@@ -14,7 +14,7 @@
                             <img :src="`${app.url}/frontend/img/logo.svg`" alt="Movies & TV Shows, Online cinema HTML Template">
                         </Link>
 
-                        <ul class="header__nav">
+                        <ul class="header__nav" :class="{ 'header__nav--active': toggleMenu }">
                             <li class="header__nav-item">
                                 <Link class="header__nav-link" href="/">Trang chủ</Link>
                             </li>
@@ -66,10 +66,23 @@
     </header>
 </template>
 
-<script setup>
+<script>
 import {Link, usePage} from '@inertiajs/inertia-vue3'
-import {computed} from "vue";
 
-const user = computed(() => usePage().props.value.auth.user)
-const app = computed(() => usePage().props.value.app)
+export default {
+    components: {Link},
+    data() {
+        return {
+            toggleMenu: false,
+        }
+    },
+    computed: {
+        user() {
+            return usePage().props.value.auth.user
+        },
+        app() {
+            return usePage().props.value.app
+        },
+    },
+}
 </script>
