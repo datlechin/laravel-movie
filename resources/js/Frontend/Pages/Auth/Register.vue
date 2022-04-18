@@ -61,9 +61,8 @@
 
 <script setup>
 import {Link, useForm, Head} from "@inertiajs/inertia-vue3";
-import {defineProps} from "vue";
 
-const props = defineProps({
+defineProps({
     errors: Object,
 })
 

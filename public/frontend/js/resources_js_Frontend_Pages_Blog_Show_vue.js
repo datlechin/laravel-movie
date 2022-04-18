@@ -217,7 +217,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
       "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["breadcrumb__item", {
         'breadcrumb__item--active': $setup.isLastCrumb(index)
-      }])
+      }]),
+      key: index
     }, [!$setup.isLastCrumb(index) ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["Link"], {
       key: 0,
       href: crum.url,
@@ -232,8 +233,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     , _hoisted_8)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 2
     /* CLASS */
     );
-  }), 256
-  /* UNKEYED_FRAGMENT */
+  }), 128
+  /* KEYED_FRAGMENT */
   ))])])])])]);
 }
 

@@ -12,6 +12,7 @@
                             class="breadcrumb__item"
                             v-for="(crum, index) in crums"
                             :class="{ 'breadcrumb__item--active': isLastCrumb(index) }"
+                            :key="index"
                         >
                             <Link :href="crum.url" v-text="crum.name" v-if="!isLastCrumb(index)"/>
                             <span v-text="crum.name" v-if="isLastCrumb(index)"/>
@@ -25,7 +26,6 @@
 
 <script setup>
 import {Link} from "@inertiajs/inertia-vue3";
-import {defineProps} from "vue";
 
 const props = defineProps({
     crums: Array

@@ -23,7 +23,6 @@ var __default__ = {
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
-    var props = __props;
     var form = (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.useForm)({
       name: null,
       email: null,
@@ -31,7 +30,6 @@ var __default__ = {
       password_confirmation: null
     });
     var __returned__ = {
-      props: props,
       form: form,
       Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Link,
       useForm: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.useForm,

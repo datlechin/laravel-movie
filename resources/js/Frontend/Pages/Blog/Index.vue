@@ -16,7 +16,6 @@
 import Paginate from "../../Shared/Paginate";
 import PostItem from "../../Shared/PostItem";
 import Breadcrumb from "../../Shared/Breadcrumb";
-import {defineProps} from "vue";
 
 const props = defineProps({
     posts: Object
