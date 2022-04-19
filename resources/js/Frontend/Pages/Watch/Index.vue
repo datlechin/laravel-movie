@@ -1,5 +1,5 @@
 <script>
-import { Link } from '@inertiajs/inertia-vue3'
+import { Link, Head } from '@inertiajs/inertia-vue3'
 import Share from '../../Shared/Share.vue'
 import VideoPlayer from '../../Shared/VideoPlayer.vue'
 
@@ -44,6 +44,7 @@ export default {
 </script>
 
 <template>
+  <Head :title="movie.title" />
   <section
     class="
       section
