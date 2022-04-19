@@ -89,7 +89,7 @@ export default {
           <div class="col-12 col-xl-8">
             <Link
               v-if="movie.videos.results[0]"
-              :href="`https://www.youtube.com/embed/${movie.videos.results[0].key}`"
+              :href="`https://www.youtube.com/watch?v=${movie.videos.results[0].key}`"
               class="article__trailer open-video"
             >
               <svg
