@@ -1,12 +1,8 @@
-<template>
-  <video ref="videoPlayer" :data-plyr-config="this.options"></video>
-</template>
-
 <script>
 import Plyr from 'plyr'
+import 'plyr/dist/plyr.css'
 
 export default {
-  name: 'VideoPlayer',
   props: {
     options: Object,
   },
@@ -26,3 +22,7 @@ export default {
   },
 }
 </script>
+
+<template>
+  <video ref="videoPlayer" :data-plyr-config="this.options"></video>
+</template>

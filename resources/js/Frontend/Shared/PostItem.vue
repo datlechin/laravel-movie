@@ -10,39 +10,153 @@ export default {
 </script>
 
 <template>
-  <div class="col-sm-3 col-md-6 col-lg-6 col-xl-4">
-    <div class="interview">
-      <Link :href="`/blog/${post.slug}`" class="interview__cover">
+  <div class="col-12 col-sm-6 col-lg-4">
+    <div class="post">
+      <Link :href="`/blog/${post.slug}`" class="post__img">
         <img :src="post.image" :alt="post.title" />
-        <span>
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 22 22"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M11 1C16.5228 1 21 5.47716 21 11C21 16.5228 16.5228 21 11 21C5.47716 21 1 16.5228 1 11C1 5.47716 5.47716 1 11 1Z"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M14.0501 11.4669C13.3211 12.2529 11.3371 13.5829 10.3221 14.0099C10.1601 14.0779 9.74711 14.2219 9.65811 14.2239C9.46911 14.2299 9.28711 14.1239 9.19911 13.9539C9.16511 13.8879 9.06511 13.4569 9.03311 13.2649C8.93811 12.6809 8.88911 11.7739 8.89011 10.8619C8.88911 9.90489 8.94211 8.95489 9.04811 8.37689C9.07611 8.22089 9.15811 7.86189 9.18211 7.80389C9.22711 7.69589 9.30911 7.61089 9.40811 7.55789C9.48411 7.51689 9.57111 7.49489 9.65811 7.49789C9.74711 7.49989 10.1091 7.62689 10.2331 7.67589C11.2111 8.05589 13.2801 9.43389 14.0401 10.2439C14.1081 10.3169 14.2951 10.5129 14.3261 10.5529C14.3971 10.6429 14.4321 10.7519 14.4321 10.8619C14.4321 10.9639 14.4011 11.0679 14.3371 11.1549C14.3041 11.1999 14.1131 11.3999 14.0501 11.4669Z"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          {{ new Date(post.created_at).toLocaleDateString('vi') }}
-        </span>
       </Link>
-      <h3 class="interview__title">
-        <Link :href="`/blog/${post.slug}`" v-text="post.title" />
-      </h3>
+      <div class="post__content">
+        <Link href="#" class="post__category">{{ post.category.name }}</Link>
+        <h3 class="post__title">
+          <Link :href="`/blog/${post.slug}`">
+            {{ post.title }}
+          </Link>
+        </h3>
+        <div class="post__meta">
+          <span class="post__meta--item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M12,2A10,10,0,1,0,22,12,10.01114,10.01114,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8.00917,8.00917,0,0,1,12,20ZM14.09814,9.63379,13,10.26807V7a1,1,0,0,0-2,0v5a1.00025,1.00025,0,0,0,1.5.86621l2.59814-1.5a1.00016,1.00016,0,1,0-1-1.73242Z"
+              />
+            </svg>
+            {{ new Date(post.created_at).toLocaleDateString('vi-VN') }}
+          </span>
+          <span class="post__meta--item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M17,9H7a1,1,0,0,0,0,2H17a1,1,0,0,0,0-2Zm-4,4H7a1,1,0,0,0,0,2h6a1,1,0,0,0,0-2ZM12,2A10,10,0,0,0,2,12a9.89,9.89,0,0,0,2.26,6.33l-2,2a1,1,0,0,0-.21,1.09A1,1,0,0,0,3,22h9A10,10,0,0,0,12,2Zm0,18H5.41l.93-.93a1,1,0,0,0,0-1.41A8,8,0,1,1,12,20Z"
+              ></path>
+            </svg>
+            18
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+@import '@/sass/variables';
+
+.post {
+  position: relative;
+  margin-top: 20px;
+  border-radius: 12px;
+  width: 100%;
+  overflow: hidden;
+  background-color: #222227;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: calc(100% - 20px);
+
+  .post__img {
+    display: block;
+    width: 100%;
+    position: relative;
+    background-color: #000;
+
+    img {
+      width: 100%;
+      max-height: 270px;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .post__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    padding: 20px;
+    background-color: #222227;
+    border-radius: 0 0 12px 12px;
+    height: 100%;
+    position: relative;
+  }
+
+  .post__category {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 28px;
+    min-width: 70px;
+    width: auto;
+    color: #fff;
+    font-size: 13px;
+    background-color: $primary-color;
+    border-radius: 8px;
+    padding: 0 15px;
+    margin-bottom: 20px;
+    position: absolute;
+    bottom: 100%;
+    left: 20px;
+    z-index: 2;
+
+    &:hover {
+      color: #fff;
+      background-color: $primary-color;
+    }
+  }
+
+  .post__title {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 140%;
+    color: #fff;
+    margin-bottom: 20px;
+    overflow: hidden;
+    width: 100%;
+
+    a {
+      color: #fff;
+      display: block;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .post__meta {
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 20px;
+
+    svg {
+      fill: #fff;
+      width: 16px;
+      height: auto;
+      margin-right: 5px;
+    }
+
+    .post__meta--item {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 13px;
+      color: #c0c0c0;
+    }
+  }
+}
+</style>

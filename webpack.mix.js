@@ -1,4 +1,5 @@
-const mix = require('laravel-mix');
+const mix = require("laravel-mix");
+const path = require('path')
 
 /*
  |--------------------------------------------------------------------------
@@ -11,15 +12,22 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/Frontend/app.js', 'public/frontend/js')
-    .js('resources/js/Backend/app.js', 'public/backend/js')
+mix.js("resources/js/Frontend/app.js", "public/frontend/js")
+    .js("resources/js/Backend/app.js", "public/backend/js")
     .vue()
-    .sass('resources/sass/app.scss', 'public/frontend/css')
-    .sass('resources/sass/admin.scss', 'public/backend/css')
+    .sass("resources/sass/app.scss", "public/frontend/css")
+    .sass("resources/sass/admin.scss", "public/backend/css")
     .options({
         processCssUrls: false,
     })
     .disableSuccessNotifications()
+    .webpackConfig({
+        resolve: {
+            alias: {
+                "@": path.resolve(__dirname, "resources"),
+            },
+        },
+    });
 
 if (mix.inProduction()) {
     mix.version();

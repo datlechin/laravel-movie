@@ -2,9 +2,9 @@
 import { Link, Head } from '@inertiajs/inertia-vue3'
 import Share from '../../Shared/Share.vue'
 import VideoPlayer from '../../Shared/VideoPlayer.vue'
+
 import 'magnific-popup/dist/jquery.magnific-popup'
 import 'magnific-popup/dist/magnific-popup.css'
-import 'plyr/dist/plyr.css'
 
 export default {
   components: {
@@ -28,10 +28,9 @@ export default {
         },
         sources: [
           {
-            src: this.movie.videos.results[0]
-              ? this.movie.videos.results[0].key
-              : 'bTqVqk7FSmY',
-            provider: 'youtube',
+            src: '',
+            type: 'video/mp4',
+            size: 1080,
           },
         ],
       },
@@ -186,3 +185,4 @@ export default {
     </div>
   </section>
 </template>
+
