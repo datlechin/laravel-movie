@@ -1,6 +1,6 @@
-@import url("magnific-popup.css");
-@import url("bootstrap.sass");
-@import url("plyr.scss");
+// @import url("bootstrap.sass");
+@import url('bootstrap/dist/css/bootstrap-reboot.css');
+@import url('bootstrap/dist/css/bootstrap-grid.css');
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Rubik:ital,wght@0,300;0,400;0,500;1,400&display=swap");
 
 html {
@@ -6208,6 +6208,10 @@ body::-webkit-scrollbar-thumb {
     width: 44px;
     height: 44px;
     background: url("../img/close.svg") no-repeat center;
+}
+
+.mfp-iframe-holder .mfp-close:hover {
+    cursor: pointer;
 }
 
 .my-mfp-zoom-in .zoom-anim-dialog {

@@ -2,7 +2,6 @@
 import { Link, Head, useForm } from '@inertiajs/inertia-vue3'
 
 export default {
-  layout: null,
   components: {
     Link,
     Head,

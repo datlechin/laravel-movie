@@ -1,11 +1,10 @@
 <script>
 import { Link, usePage } from '@inertiajs/inertia-vue3'
-import TopupModal from './TopupModal'
 import SocialItem from './SocialItem'
 import { computed } from 'vue'
 
 export default {
-  components: { Link, TopupModal, SocialItem },
+  components: { Link, SocialItem },
   computed: {
     app() {
       return this.$page.props.app
@@ -117,5 +116,4 @@ export default {
       </div>
     </div>
   </footer>
-  <TopupModal />
 </template>

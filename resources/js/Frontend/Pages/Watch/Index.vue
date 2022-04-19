@@ -3,6 +3,8 @@ import { Link, Head } from '@inertiajs/inertia-vue3'
 import Share from '../../Shared/Share.vue'
 import VideoPlayer from '../../Shared/VideoPlayer.vue'
 import 'magnific-popup/dist/jquery.magnific-popup'
+import 'magnific-popup/dist/magnific-popup.css'
+import 'plyr/dist/plyr.css'
 
 export default {
   components: {
@@ -52,6 +54,7 @@ export default {
   mounted() {
     $('.open-video').magnificPopup({
       fixedContentPos: true,
+      showCloseBtn: false,
       type: 'iframe',
       preloader: false,
       removalDelay: 300,

@@ -1,6 +1,8 @@
 /node_modules
 /public/hot
 /public/storage
+/public/frontned/js
+/public/frontned/css
 /storage/*.key
 /vendor
 .env
