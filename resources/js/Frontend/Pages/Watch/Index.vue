@@ -19,14 +19,19 @@ export default {
       videoOptions: {
         type: 'video',
         title: this.movie.title,
+        poster: this.movie.backdrop_path,
+        previewThumbnails: {
+          enabled: false,
+          src: this.movie.backdrop_path,
+        },
         sources: [
           {
-            src: 'https://doc-14-ac-docs.googleusercontent.com/docs/securesc/efvsm30s9hr3v7rr4tso1on2h270mi7v/d70l576o2652829sd8h01jbib3bcm8r7/1650350100000/03697701420164185254/03697701420164185254/1vBCMKxQ4WZbKR6sCeuTvQc0Tvs-jiO8p?e=download&ax=ACxEAsYNX15uhxTHZNOr4gmcCzl2gdMHC95rNIRUSto8nSkBfftO1OmvJltXNxUPjl1zZ49APyJ4r9_yZIISF8WuTSTdVF9jZoR-2gBoH76MesId3fWSwPAk3ZN6Ag1d9BSSZ_oc9-S8e0ggKkKRdwvVvwNdHHMe92AkzsCAvwhY_8CDTz-IRLDBUcAX2K1QciHaodfEOjmeZrktLxnWmABME0uu5b4bHEPqC_b6qN3V_Wy8ZyBexxH8AJWTMhk4VbmNuYdIhMFqS_ihJokzA6dzI-Ih4uUL7Vr_h3uWqC6w6xbX0PKY0vc7wzUWnvzryGmmg1Hp-6YnZqnCFan50hwxUKNLviY44Awozo_bGeVJXv3_sCyrDuz0JW8jIektxh6eEPGwFjz1COPUGO4bunhqAvSg7ZG_gKQyXf1kbhtPJ7OgN6h-tHZsDm51MgFRD_kB3tQ9Pnb0OQ5_ygnxwYzDQoxyyy1IYztLGCFsn6nC32MgGF3SXAtOIvPdNMIIetVZWzqNvevTGGo_Mm6_5rO3MkjJ9QFkoUXGhHh9x2gNW7HX7sbHVvV_5mmLfE5ccIEDYfu6ogyWUYXMI9bekmEpNFRaUpkdZ253MyFJqRy3Yx3OFMXdguw4cW8SkLQmAH0yUhZNHCJfDel5h6H3Zbe7NiZwnUsBkNBvwgfagt5zzRG9NqMdRzbqixtMPdZpPUMzDRjHEoe7pjkGOyZhIKwd9RgXF2roVDEuPcOZ_Ca44g&authuser=1',
-            type: 'video/mp4',
-            size: 1080,
+            src: this.movie.videos.results[0]
+              ? this.movie.videos.results[0].key
+              : 'bTqVqk7FSmY',
+            provider: 'youtube',
           },
         ],
-        poster: this.movie.backdrop_path,
       },
     }
   },
@@ -36,19 +41,32 @@ export default {
       const minutes = runtime % 60
       return `${hours}h ${minutes}m`
     },
+    handleScroll() {
+      if (window.scrollY > 0) {
+        document.querySelector('header').classList.add('header--scroll')
+      } else {
+        document.querySelector('header').classList.remove('header--scroll')
+      }
+    },
   },
   mounted() {
     $('.open-video').magnificPopup({
-      disableOn: 500,
       fixedContentPos: true,
       type: 'iframe',
       preloader: false,
       removalDelay: 300,
       mainClass: 'mfp-fade',
     })
+
     document.querySelector(
       '.section__bg'
     ).style.backgroundImage = `url(${this.movie.backdrop_path})`
+  },
+  created() {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll)
   },
 }
 </script>
@@ -71,7 +89,7 @@ export default {
           <div class="col-12 col-xl-8">
             <Link
               v-if="movie.videos.results[0]"
-              :href="`http://www.youtube.com/watch?v=${movie.videos.results[0].key}`"
+              :href="`https://www.youtube.com/embed/${movie.videos.results[0].key}`"
               class="article__trailer open-video"
             >
               <svg

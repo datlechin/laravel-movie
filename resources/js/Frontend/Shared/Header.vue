@@ -26,7 +26,7 @@ export default {
     class="header"
     :class="{
       'header--menu': toggleMenu,
-      'header--hidden': $page.component.startsWith('Blog'),
+      'header--hidden': $page.component.startsWith('Blog') || $page.component.startsWith('Watch'),
       'header--static':
         $page.component === 'Home' ||
         $page.component.startsWith('User') ||
