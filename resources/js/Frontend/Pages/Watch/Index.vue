@@ -1,48 +1,3 @@
-<script>
-import { Link, Head } from '@inertiajs/inertia-vue3'
-import Share from '../../Shared/Share.vue'
-import VideoPlayer from '../../Shared/VideoPlayer.vue'
-
-export default {
-  components: {
-    Share,
-    VideoPlayer,
-    Link,
-  },
-  props: {
-    movie: Object,
-  },
-  data() {
-    return {
-      videoOptions: {
-        type: 'video',
-        title: this.movie.title,
-        sources: [
-          {
-            src: 'https://doc-14-ac-docs.googleusercontent.com/docs/securesc/efvsm30s9hr3v7rr4tso1on2h270mi7v/d70l576o2652829sd8h01jbib3bcm8r7/1650350100000/03697701420164185254/03697701420164185254/1vBCMKxQ4WZbKR6sCeuTvQc0Tvs-jiO8p?e=download&ax=ACxEAsYNX15uhxTHZNOr4gmcCzl2gdMHC95rNIRUSto8nSkBfftO1OmvJltXNxUPjl1zZ49APyJ4r9_yZIISF8WuTSTdVF9jZoR-2gBoH76MesId3fWSwPAk3ZN6Ag1d9BSSZ_oc9-S8e0ggKkKRdwvVvwNdHHMe92AkzsCAvwhY_8CDTz-IRLDBUcAX2K1QciHaodfEOjmeZrktLxnWmABME0uu5b4bHEPqC_b6qN3V_Wy8ZyBexxH8AJWTMhk4VbmNuYdIhMFqS_ihJokzA6dzI-Ih4uUL7Vr_h3uWqC6w6xbX0PKY0vc7wzUWnvzryGmmg1Hp-6YnZqnCFan50hwxUKNLviY44Awozo_bGeVJXv3_sCyrDuz0JW8jIektxh6eEPGwFjz1COPUGO4bunhqAvSg7ZG_gKQyXf1kbhtPJ7OgN6h-tHZsDm51MgFRD_kB3tQ9Pnb0OQ5_ygnxwYzDQoxyyy1IYztLGCFsn6nC32MgGF3SXAtOIvPdNMIIetVZWzqNvevTGGo_Mm6_5rO3MkjJ9QFkoUXGhHh9x2gNW7HX7sbHVvV_5mmLfE5ccIEDYfu6ogyWUYXMI9bekmEpNFRaUpkdZ253MyFJqRy3Yx3OFMXdguw4cW8SkLQmAH0yUhZNHCJfDel5h6H3Zbe7NiZwnUsBkNBvwgfagt5zzRG9NqMdRzbqixtMPdZpPUMzDRjHEoe7pjkGOyZhIKwd9RgXF2roVDEuPcOZ_Ca44g&authuser=1',
-            type: 'video/mp4',
-            size: 1080,
-          },
-        ],
-        poster: this.movie.backdrop_path,
-      },
-    }
-  },
-  methods: {
-    runtimeToHours(runtime) {
-      const hours = Math.floor(runtime / 60)
-      const minutes = runtime % 60
-      return `${hours}h ${minutes}m`
-    },
-  },
-  mounted() {
-    document.querySelector(
-      '.section__bg'
-    ).style.backgroundImage = `url(${this.movie.backdrop_path})`
-  },
-}
-</script>
-
 <template>
   <Head :title="movie.title" />
   <section
@@ -156,3 +111,58 @@ export default {
   </section>
 </template>
 
+
+<script>
+import { Link, Head } from '@inertiajs/inertia-vue3'
+import Share from '../../Shared/Share.vue'
+import VideoPlayer from '../../Shared/VideoPlayer.vue'
+import 'magnific-popup/dist/jquery.magnific-popup'
+
+export default {
+  components: {
+    Share,
+    Head,
+    VideoPlayer,
+    Link,
+  },
+  props: {
+    movie: Object,
+  },
+  data() {
+    return {
+      videoOptions: {
+        type: 'video',
+        title: this.movie.title,
+        sources: [
+          {
+            src: 'https://doc-14-ac-docs.googleusercontent.com/docs/securesc/efvsm30s9hr3v7rr4tso1on2h270mi7v/d70l576o2652829sd8h01jbib3bcm8r7/1650350100000/03697701420164185254/03697701420164185254/1vBCMKxQ4WZbKR6sCeuTvQc0Tvs-jiO8p?e=download&ax=ACxEAsYNX15uhxTHZNOr4gmcCzl2gdMHC95rNIRUSto8nSkBfftO1OmvJltXNxUPjl1zZ49APyJ4r9_yZIISF8WuTSTdVF9jZoR-2gBoH76MesId3fWSwPAk3ZN6Ag1d9BSSZ_oc9-S8e0ggKkKRdwvVvwNdHHMe92AkzsCAvwhY_8CDTz-IRLDBUcAX2K1QciHaodfEOjmeZrktLxnWmABME0uu5b4bHEPqC_b6qN3V_Wy8ZyBexxH8AJWTMhk4VbmNuYdIhMFqS_ihJokzA6dzI-Ih4uUL7Vr_h3uWqC6w6xbX0PKY0vc7wzUWnvzryGmmg1Hp-6YnZqnCFan50hwxUKNLviY44Awozo_bGeVJXv3_sCyrDuz0JW8jIektxh6eEPGwFjz1COPUGO4bunhqAvSg7ZG_gKQyXf1kbhtPJ7OgN6h-tHZsDm51MgFRD_kB3tQ9Pnb0OQ5_ygnxwYzDQoxyyy1IYztLGCFsn6nC32MgGF3SXAtOIvPdNMIIetVZWzqNvevTGGo_Mm6_5rO3MkjJ9QFkoUXGhHh9x2gNW7HX7sbHVvV_5mmLfE5ccIEDYfu6ogyWUYXMI9bekmEpNFRaUpkdZ253MyFJqRy3Yx3OFMXdguw4cW8SkLQmAH0yUhZNHCJfDel5h6H3Zbe7NiZwnUsBkNBvwgfagt5zzRG9NqMdRzbqixtMPdZpPUMzDRjHEoe7pjkGOyZhIKwd9RgXF2roVDEuPcOZ_Ca44g&authuser=1',
+            type: 'video/mp4',
+            size: 1080,
+          },
+        ],
+        poster: this.movie.backdrop_path,
+      },
+    }
+  },
+  methods: {
+    runtimeToHours(runtime) {
+      const hours = Math.floor(runtime / 60)
+      const minutes = runtime % 60
+      return `${hours}h ${minutes}m`
+    },
+  },
+  mounted() {
+    $('.open-video').magnificPopup({
+      disableOn: 500,
+      fixedContentPos: true,
+      type: 'iframe',
+      preloader: false,
+      removalDelay: 300,
+      mainClass: 'mfp-fade',
+    })
+    document.querySelector(
+      '.section__bg'
+    ).style.backgroundImage = `url(${this.movie.backdrop_path})`
+  },
+}
+</script>

@@ -9,8 +9,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $moviesReponse = Http::get('https://api.themoviedb.org/3/discover/movie?api_key=9d92f25221a9c75551eff9738772b39c&&sort_by=' . request('grade', 'popularity') . '.desc&with_genres=' . request('genre') . '&year=' . request('year') . '&language=vi' . '&page=' . request('page') . '&watch_region=' . request('with_original_language'));
-        $genresResponse = Http::get('https://api.themoviedb.org/3/genre/movie/list?api_key=9d92f25221a9c75551eff9738772b39c&language=vi');
+    $moviesReponse = Http::get('https://api.themoviedb.org/3/discover/movie?api_key='. env('THEMOVIEDB_API_KEY') .'&&sort_by=' . request('grade', 'popularity') . '.desc&with_genres=' . request('genre') . '&year=' . request('year') . '&language=vi' . '&page=' . request('page') . '&watch_region=' . request('with_original_language'));
+    $genresResponse = Http::get('https://api.themoviedb.org/3/genre/movie/list?api_key='. env('THEMOVIEDB_API_KEY') .'&language=vi');
 
         $genres = collect($genresResponse['genres'])->mapWithKeys(function ($genre) {
             return [$genre['id'] => $genre['name']];

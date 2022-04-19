@@ -5,6 +5,7 @@ import Layout from "./Shared/Layout";
 import { Inertia } from "@inertiajs/inertia";
 import NProgress from "nprogress";
 import Toaster from "@meforma/vue-toaster";
+window.$ = window.jQuery = require('jquery');
 
 createInertiaApp({
     resolve: async (name) => {
