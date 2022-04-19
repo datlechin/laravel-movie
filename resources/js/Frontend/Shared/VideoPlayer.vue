@@ -1,19 +1,14 @@
 <template>
-  <video ref="videoPlayer" class="video-js"></video>
+  <video ref="videoPlayer" :data-plyr-config="this.options"></video>
 </template>
 
 <script>
-import videojs from 'video.js'
+import Plyr from 'plyr'
 
 export default {
   name: 'VideoPlayer',
   props: {
-    options: {
-      type: Object,
-      default() {
-        return {}
-      },
-    },
+    options: Object,
   },
   data() {
     return {
@@ -21,13 +16,12 @@ export default {
     }
   },
   mounted() {
-    this.player = videojs(this.$refs.videoPlayer, this.options, () => {
-      this.player.log('onPlayerReady', this)
-    })
+    this.player = new Plyr(this.$refs.videoPlayer)
+    this.player.source = this.options
   },
   beforeDestroy() {
     if (this.player) {
-      this.player.dispose()
+      this.player.destroy()
     }
   },
 }
